@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 app.use(bodyParser.json());
 app.use(express.static('public'));
@@ -113,4 +113,4 @@ app.get('/', (req, res) => {
     `);
 });
 
-app.listen(PORT, () => console.log(\`Library Server: http://localhost:\${PORT}\`));
+app.listen(PORT, () => console.log(`Library Server: http://localhost:${PORT}`));
